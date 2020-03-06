@@ -1,0 +1,3 @@
+[submodule "roles/samuelharmer.sshkeys"]
+	path = roles/samuelharmer.sshkeys
+	url = https://github.com/samuelharmer/ansible-role-sshkeys.git
