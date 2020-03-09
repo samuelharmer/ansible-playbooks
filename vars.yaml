@@ -1,0 +1,11 @@
+
+- hosts: localhost
+  tasks:
+    # print vars to stdout during play
+    - debug:
+        var: vars
+
+    # dump vars to file (JSON format) in same directory as this playbook
+    - copy:
+        dest: '{{ playbook_dir }}/vars.json'
+        content: '{{ vars }}'
