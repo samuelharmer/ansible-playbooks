@@ -6,6 +6,16 @@
         var: vars
 
     # dump vars to file (JSON format) in same directory as this playbook
+    - file:
+        path: '{{ playbook_dir }}/vars'
+        state: directory
     - copy:
-        dest: '{{ playbook_dir }}/vars.json'
-        content: '{{ vars }}'
+        dest: '{{ playbook_dir }}/vars/localhost.json'
+        content: '{{ vars | to_nice_json(indent=4) }}'
+        mode: 'u=rw'
+
+- hosts: all
+  vars:
+    dumpall_host_destination: '{{ playbook_dir }}/vars/{{ ansible_host }}'
+  roles:
+    - samuelharmer.dumpall

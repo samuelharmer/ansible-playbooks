@@ -1,3 +1,6 @@
 [submodule "roles/samuelharmer.sshkeys"]
 	path = roles/samuelharmer.sshkeys
 	url = https://github.com/samuelharmer/ansible-role-sshkeys.git
+[submodule "roles/samuelharmer.dumpall"]
+	path = roles/samuelharmer.dumpall
+	url = https://github.com/samuelharmer/ansible-role-dumpall.git
